@@ -413,9 +413,9 @@ flowchart TD
     G --> G2[Caso: ambas negativas → usar rrr]
     G --> G3[Caso: mixtas → movimientos separados]
     
-    G1 --> H[Coste = comunes + (restoA + restoB)]
+    G1 --> H["Coste = 'comunes' + ('restoA' + 'restoB')"]
     G2 --> H
-    G3 --> H[Coste = |rotA| + |rotB|]
+    G3 --> H["Coste = '|rotA|' + '|rotB|'"]
     
     H --> I[Guardar info: nodo, coste,<br/>rotA, rotB, posObjetivo]
     I --> J[Fin]
