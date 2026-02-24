@@ -154,7 +154,25 @@ _*rrr:*_<br> rra y rrb simultáneamente.<br>
     Retorno: {int}
         Correcto: 0 si se liberó correctamente
         Incorrecto: 1 si data es NULL
+	
+	FT_DATA_STACK_A_ADD
+	Definición: Crea un nuevo nodo con el número dado y lo añade al principio de la pila a
+	Parametros:
+		{t_data} data : Estructura principal que contiene la pila a
+        {int} nbr	  : Número a almacenar en el nuevo nodo
+	Retorno: {int}
+		  Correcto 0: si el nodo se creó y añadió correctamente a la pila a.
+       	Incorrecto 1: si data es NULL, falla la creación de la pila, falla la creación del nodo, o falla la operación de añadir
 
+	FT_DATA_STACK_B_ADD
+	Definición: Crea un nuevo nodo con el número dado y lo añade al principio de la pila a
+	Parametros:
+		{t_data} data : Estructura principal que contiene la pila a
+        {int} nbr	  : Número a almacenar en el nuevo nodo
+	Retorno: {int}
+		  Correcto 0: si el nodo se creó y añadió correctamente a la pila a.
+       	Incorrecto 1: si data es NULL, falla la creación de la pila, falla la creación del nodo, o falla la operación de añadir
+		
 ### stack.c
     FT_STACK_NEW -
     Definición: Crea e inicializa una nueva estructura t_stack
