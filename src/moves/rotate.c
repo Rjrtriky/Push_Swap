@@ -6,11 +6,12 @@
 /*   By: rjuarez- <rjuarez-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/07 05:03:45 by rjuarez-          #+#    #+#             */
-/*   Updated: 2026/02/23 23:01:51 by rjuarez-         ###   ########.fr       */
+/*   Updated: 2026/02/24 02:20:11 by rjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "data.h"
+#include "moves.h"
 
 /*ra (rotar a): Desplaza todos los elementos de la pila a en 1 posición.
 El primer elemento se convierte en el último.

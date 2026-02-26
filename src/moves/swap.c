@@ -6,9 +6,12 @@
 /*   By: rjuarez- <rjuarez-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/07 05:02:44 by rjuarez-          #+#    #+#             */
-/*   Updated: 2026/02/24 01:13:53 by rjuarez-         ###   ########.fr       */
+/*   Updated: 2026/02/24 02:20:19 by rjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "data.h"
+#include "moves.h"
 
 /*sa (intercambiar a): Intercambia los dos primeros elementos de la parte
 superior de la pila a.

@@ -6,11 +6,12 @@
 /*   By: rjuarez- <rjuarez-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/07 05:04:00 by rjuarez-          #+#    #+#             */
-/*   Updated: 2026/02/24 01:11:41 by rjuarez-         ###   ########.fr       */
+/*   Updated: 2026/02/24 02:20:06 by rjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "data.h"
+#include "moves.h"
 
 /*rra (rotar a en sentido inverso): Desplaza todos los elementos de la pila a
 en 1 posición.

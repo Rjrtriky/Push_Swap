@@ -6,7 +6,7 @@
 /*   By: rjuarez- <rjuarez-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/07 05:03:19 by rjuarez-          #+#    #+#             */
-/*   Updated: 2026/02/23 22:59:26 by rjuarez-         ###   ########.fr       */
+/*   Updated: 2026/02/24 18:30:17 by rjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ pb (empujar b): Toma el primer elemento en la parte superior de a y colócalo en
 la parte superior de b.
 No hacer nada si a está vacío.*/
 
-void	pa(t_data *data);
+/*void	pa(t_data *data);
 void	pb(t_data *data);
-void	ft_push(t_stack *stack_ori, t_stack *stack_des);
+void	ft_push(t_stack *stack_ori, t_stack *stack_des);*/
 
 /*FT_PUSH
  * @def Pops a node from origin stack and pushes it to destination stack
