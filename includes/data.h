@@ -6,7 +6,7 @@
 /*   By: rjuarez- <rjuarez-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/07 04:15:06 by rjuarez-          #+#    #+#             */
-/*   Updated: 2026/02/23 19:49:26 by rjuarez-         ###   ########.fr       */
+/*   Updated: 2026/02/24 18:02:44 by rjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,13 @@
 # define DATA_H
 // ========== Libraries ========== //
 # include <stddef.h>
+# include <stdlib.h>
 // =========== Structs =========== //
 
 typedef struct s_node
 {
-	struct t_node	*next;
-	struct t_node	*previous;
+	struct s_node	*next;
+	struct s_node	*previous;
 	int				num;
 	int				index;
 	int				cost_rot_a;
@@ -30,16 +31,16 @@ typedef struct s_node
 
 typedef struct s_stack
 {
-	struct t_node	*first_node;
-	struct t_node	*end_node;
-	int				size;
+	t_node	*first_node;
+	t_node	*end_node;
+	int		size;
 }		t_stack;
 
 typedef struct s_data
 {
-	struct t_stack	*stack_a;
-	struct t_stack	*stack_b;
-	int				n_nodes;
+	t_stack	*stack_a;
+	t_stack	*stack_b;
+	int		n_nodes;
 }		t_data;
 
 // =================================== //
@@ -48,10 +49,13 @@ typedef struct s_data
 t_data	*ft_data_new(void);
 // -------- Erased Data -------------- //
 int		ft_data_free(t_data *data);
+// -------- Actions Data ------------- //
+int		ft_data_stack_a_add(t_data *data, int nbr);
+int		ft_data_stack_b_add(t_data *data, int nbr);
 // =================================== //
 // -------- STACK -------------------- //
 // -------- Builders Stack ----------- //
-t_stack	ft_stack_new(void);
+t_stack	*ft_stack_new(void);
 // -------- Erased Stack ------------- //
 int		ft_stack_free(t_stack *stack);
 // =================================== //
