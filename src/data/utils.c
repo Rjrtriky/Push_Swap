@@ -6,11 +6,14 @@
 /*   By: rjuarez- <rjuarez-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/23 20:22:43 by rjuarez-          #+#    #+#             */
-/*   Updated: 2026/02/23 22:55:33 by rjuarez-         ###   ########.fr       */
+/*   Updated: 2026/02/24 18:17:08 by rjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "data.h"
+#include "debug.h"
+#include <stddef.h>
+#include <stdlib.h>
 
 void	ft_stack_index(t_stack *stack);
 int		ft_stack_add(t_stack *stack, t_node *node);

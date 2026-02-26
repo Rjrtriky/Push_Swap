@@ -6,11 +6,14 @@
 /*   By: rjuarez- <rjuarez-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/23 16:52:54 by rjuarez-          #+#    #+#             */
-/*   Updated: 2026/02/24 01:14:33 by rjuarez-         ###   ########.fr       */
+/*   Updated: 2026/02/24 18:17:04 by rjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "data.h"
+#include "debug.h"
+#include <stddef.h>
+#include <stdlib.h>
 /*
 typedef struct s_stack
 {
