@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   moves_utils.c                                      :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rjuarez- <rjuarez-@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: rjuarez- <rjuarez-@student.42.fr>          #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/24 18:19:25 by rjuarez-          #+#    #+#             */
-/*   Updated: 2026/04/02 17:53:49 by rjuarez-         ###   ########.fr       */
+/*   Created: 2025-10-18 17:07:38 by rjuarez-          #+#    #+#             */
+/*   Updated: 2025-10-18 17:07:38 by rjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "moves.h"
+#include "libft.h"
 
-void	ft_register(char *mov)
+t_list	*ft_lstlast(t_list *lst);
+
+t_list	*ft_lstlast(t_list *lst)
 {
-	ft_printf("%s\n", mov);
+	t_list	*current;
+
+	if (lst == NULL)
+		return (NULL);
+	current = lst;
+	while (current->next != NULL)
+		current = current->next;
+	return (current);
 }

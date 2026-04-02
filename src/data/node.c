@@ -6,12 +6,11 @@
 /*   By: rjuarez- <rjuarez-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/23 19:01:21 by rjuarez-          #+#    #+#             */
-/*   Updated: 2026/02/24 18:16:56 by rjuarez-         ###   ########.fr       */
+/*   Updated: 2026/03/02 20:28:52 by rjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "data.h"
-#include "debug.h"
 #include <stddef.h>
 #include <stdlib.h>
 
@@ -76,7 +75,7 @@ t_node	*ft_node_new(int nbr)
 int	ft_node_free(t_node *node)
 {
 	if (node == NULL)
-		return (1);
+		return (FALSE);
 	free (node);
-	return (0);
+	return (TRUE);
 }

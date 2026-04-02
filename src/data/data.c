@@ -6,12 +6,12 @@
 /*   By: rjuarez- <rjuarez-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/23 16:17:22 by rjuarez-          #+#    #+#             */
-/*   Updated: 2026/02/24 18:16:41 by rjuarez-         ###   ########.fr       */
+/*   Updated: 2026/04/02 16:58:26 by rjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "data.h"
-#include "debug.h"
+#include "../ft_printf/ft_printf.h"
 /*
 typedef struct s_data
 {
@@ -26,6 +26,7 @@ t_data	*ft_data_new(void);
 // -------- Erased Data -------------- //
 int		ft_data_free(t_data *data);
 // -------- Actions Data ------------- //
+void	ft_data_index(t_data *data);
 int		ft_data_stack_a_add(t_data *data, int nbr);
 int		ft_data_stack_b_add(t_data *data, int nbr);
 
@@ -45,8 +46,19 @@ t_data	*ft_data_new(void)
 	new = (t_data *)malloc(sizeof(t_data));
 	if (new == NULL)
 		return (NULL);
-	new->stack_a = NULL;
-	new->stack_b = NULL;
+	new->stack_a = ft_stack_new();
+	if (new->stack_a == NULL)
+	{
+		free(new);
+		return (NULL);
+	}
+	new->stack_b = ft_stack_new();
+	if (new->stack_b == NULL)
+	{
+		ft_stack_free(new->stack_a);
+		free(new);
+		return (NULL);
+	}
 	new->n_nodes = 0;
 	return (new);
 }
@@ -63,16 +75,36 @@ t_data	*ft_data_new(void)
  */
 int	ft_data_free(t_data *data)
 {
-	if (!data)
-		return (1);
-	if (data->stack_a)
+	if (data == NULL)
+		return (FALSE);
+	if (data->stack_a != NULL)
 		ft_stack_free(data->stack_a);
-	if (data->stack_b)
+	if (data->stack_b != NULL)
 		ft_stack_free(data->stack_b);
 	data->n_nodes = 0;
 	free (data);
-	return (0);
+	return (TRUE);
 }
+
+void	ft_data_index(t_data *data)
+{
+	t_node	*node;
+	int		i;
+
+	if (data == NULL)
+		return ;
+	ft_stack_index_ord(data->stack_a);
+	if ((data->stack_b == NULL) || (data->stack_b->first_node == NULL))
+		return ;
+	node = data->stack_b->first_node;
+	i = 1;
+	while (node != NULL)
+	{
+		node->index = i++;
+		node = node->next;
+	}
+}
+
 
 /*FT_DATA_STACK_A_ADD
  * @def Creates a new node with the given number and adds it to the beginning
@@ -92,18 +124,18 @@ int	ft_data_stack_a_add(t_data *data, int nbr)
 	t_node	*new;
 
 	if (data == NULL)
-		return (1);
+		return (FALSE);
 	if (data->stack_a == NULL)
 		data->stack_a = ft_stack_new();
 	if (data->stack_a == NULL)
-		return (1);
+		return (FALSE);
 	new = ft_node_new(nbr);
 	if (new == NULL)
-		return (1);
-	if (ft_stack_add(data->stack_a, new) == 1)
-		return (1);
+		return (FALSE);
+	if (ft_stack_add_last(data->stack_a, new) == FALSE)
+		return (FALSE);
 	data->n_nodes++;
-	return (0);
+	return (TRUE);
 }
 
 /*FT_DATA_STACK_B_ADD
@@ -124,16 +156,17 @@ int	ft_data_stack_b_add(t_data *data, int nbr)
 	t_node	*new;
 
 	if (data == NULL)
-		return (1);
+		return (FALSE);
 	if (data->stack_b == NULL)
 		data->stack_b = ft_stack_new();
 	if (data->stack_b == NULL)
-		return (1);
+		return (FALSE);
 	new = ft_node_new(nbr);
 	if (new == NULL)
-		return (1);
-	if (ft_stack_add(data->stack_b, new) == 1)
-		return (1);
+		return (FALSE);
+	if (ft_stack_add(data->stack_b, new) == FALSE)
+		return (FALSE);
 	data->n_nodes++;
-	return (0);
+	return (TRUE);
 }
+

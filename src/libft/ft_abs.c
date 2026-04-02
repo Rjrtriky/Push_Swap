@@ -1,18 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   moves_utils.c                                      :+:      :+:    :+:   */
+/*   ft_abs.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rjuarez- <rjuarez-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/24 18:19:25 by rjuarez-          #+#    #+#             */
-/*   Updated: 2026/04/02 17:53:49 by rjuarez-         ###   ########.fr       */
+/*   Created: 2026/03/27 18:49:22 by rjuarez-          #+#    #+#             */
+/*   Updated: 2026/04/02 17:20:31 by rjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "moves.h"
+#include "libft.h"
 
-void	ft_register(char *mov)
+int	ft_abs(int num);
+
+int	ft_abs(int num)
 {
-	ft_printf("%s\n", mov);
+	if (num >= 0)
+		return (num);
+	else
+		return (-1 * num);
 }
+
+/* FT_ABS
+ * @def Returns the absolute value of a signed long long integer,
+ *      converted to unsigned long integer.
+ *
+ * @param
+ *      {long long int} nbr - number to convert.
+ *
+ * @returns {unsigned long int}
+ *      OK - Absolute value of nbr, cast to unsigned long int.
+ */
+

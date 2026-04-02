@@ -6,123 +6,99 @@
 #    By: rjuarez- <rjuarez-@student.42madrid.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/24 23:37:27 by rjuarez-          #+#    #+#              #
-#    Updated: 2026/02/24 18:37:10 by rjuarez-         ###   ########.fr        #
+#    Updated: 2026/04/02 17:30:48 by rjuarez-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # ==============================================================================
-#   PATH INCLUDE
-# ==============================================================================
-SRCS_DIR	= ./src/
-LIBFT_DIR	= ./libft/
-INC_DIR		= ./includes/
-DATA_DIR	= ./src/data/
-MOVES_DIR	= ./src/moves/
-UTILS_DIR	= ./src/utils/
-
-# ==============================================================================
-#   LIBRARY HEADERS
-# ==============================================================================
-HDRS =	$(INC_DIR)/data.h \
-		$(INC_DIR)/moves.h \
-		$(LIBFT_DIR)/libft.h \
-		$(INC_DIR)/debug.h
-
-# ==============================================================================
-#	FILES
-# ==============================================================================
-
-LIBFT_FILES	= ft_strlen.c ft_strlcpy.c ft_strlcat.c ft_strchr.c ft_strrchr.c \
-		ft_strncmp.c ft_strnstr.c ft_strdup.c ft_substr.c ft_strjoin.c \
-		ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c \
-		ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
-		ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
-		ft_itoa.c ft_toupper.c ft_tolower.c ft_atoi.c \
-		ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c ft_memchr.c \
-		ft_memcmp.c ft_calloc.c ft_strdup.c \
-		ft_lstadd_back_bonus.c ft_lstadd_front_bonus.c ft_lstclear_bonus.c \
-		ft_lstdelone_bonus.c ft_lstiter_bonus.c ft_lstlast_bonus.c \
-		ft_lstmap_bonus.c ft_lstnew_bonus.c ft_lstsize_bonus.c
-DATA_FILES	= data.c node.c stack.c utils.c
-MOVES_FILES	= push.c reverse_rotate.c rotate.c swap.c moves_utils.c
-# ALGORITHM	= 
-# CORE	= 
-# UTILS	= 
-DEBUG_FILES	= debug.c
-# ==============================================================================
-#   FULL PATH
-# ==============================================================================
-LIBFT	= $(addprefix $(LIBFT_DIR)/, $(LIBFT_FILES))
-DATA	= $(addprefix $(DATA_DIR), $(DATA_FILES))
-MOVES	= $(addprefix $(MOVES_DIR), $(MOVES_FILES))
-DEBUG	= $(addprefix $(UTILS_DIR), $(DEBUG_FILES))
-
-# ==============================================================================
-#	SOURCE FILES (without debug by default)
-# ==============================================================================
-ALL	= $(DATA) $(MOVES) $(LIBFT) $(DEBUG)
-OBJS = $(ALL:.c=.o)
-
-# ==============================================================================
-#	COMPILER CONFIGURATION
+#	SETTINGS
 # ============================================================================== 
-NAME	= push_swap.a
+NAME	= push_swap
 CC		= gcc
-CFLAGS	= -Wall -Wextra -Werror -I$(INC_DIR) -I$(LIBFT_DIR)
+CFLAGS	= -Wall -Wextra -Werror
 RM		= rm -rf
 
 # ==============================================================================
-#	LIBRARY CREATION
+#   PATHS
 # ==============================================================================
-${NAME}: ${OBJS}
-	@ar crs ${NAME} ${OBJS}
-	@echo "✅ Library $(NAME) created successfully!"
+SRCS_DIR		= src
+DATA_DIR		= $(SRCS_DIR)/data/
+PARSER_DIR		= $(SRCS_DIR)/parser/
+MOVES_DIR		= $(SRCS_DIR)/moves/
+ALGORITHM_DIR	= $(SRCS_DIR)/algorithm/
+LIBFT_DIR		= $(SRCS_DIR)/libft/
+FT_PRINTF_DIR	= $(SRCS_DIR)/ft_printf/
 
 # ==============================================================================
-#   OBJECT COMPILATION
+#   HEADERS
 # ==============================================================================
-#	Object Compilation
-#		%  - wildcard
-#		@  - echo off
-#		$@ - output file (.o)
-#		$< - input file (.c)
+HEADERS =	push_swap.h \
+			$(DATA_DIR)/data.h \
+			$(PARSER_DIR)/parser.h \
+			$(MOVES_DIR)/moves.h \
+			$(ALGORITHM_DIR)/algorithm.h \
+			$(LIBFT_DIR)/libft.h \
+			$(FT_PRINTF_DIR)/ft_printf.h
 
-%.o: %.c $(HDRS)
-	@$(CC) $(CFLAGS) -c $< -o $@
-	@echo "🔨 Compiling: $<"
+# ==============================================================================
+#	SOURCES
+# ==============================================================================
+DATA_FILES		= node.c stack.c stack_utils.c data.c 
+PARSER_FILES	= parser.c split_args.c validate.c
+MOVES_FILES		= push.c swap.c rotate.c reverse_rotate.c moves_utils.c
+ALGORITHM_FILES = algorithm.c first_step.c target.c cost.c execute_best_move.c
+LIBFT_FILES		= $(notdir $(wildcard $(LIBFT_DIR)/*.c))
+FT_PRINTF_FILES = ft_printf.c ft_conver_numbers.c  ft_puts.c ft_conver.c
+
+PUSH_SWAP		= push_swap.c
+
+# ==============================================================================
+#   FULL PATH SOURCES
+# ==============================================================================
+DATA		= $(addprefix $(DATA_DIR), $(DATA_FILES))
+MOVES		= $(addprefix $(MOVES_DIR), $(MOVES_FILES))
+PARSER		= $(addprefix $(PARSER_DIR), $(PARSER_FILES))
+ALGORITHM	= $(addprefix $(ALGORITHM_DIR), $(ALGORITHM_FILES))
+LIBFT		= $(addprefix $(LIBFT_DIR), $(LIBFT_FILES))
+FT_PRINTF	= $(addprefix $(FT_PRINTF_DIR), $(FT_PRINTF_FILES))
+
+SRC			= $(DATA) $(PARSER) $(MOVES) $(ALGORITHM) $(LIBFT) $(FT_PRINTF) \
+			  $(PUSH_SWAP)
+			  
+OBJ = $(SRC:.c=.o)
 
 # ==============================================================================
 #	RULES
 # ==============================================================================
 #	Default (Only "make")
-all: ${NAME}
-
+#	Object Compilation
+#		%  - wildcard
+#		@  - echo off
+#		$@ - output file (.o)
+#		$< - input file (.c)
+#
 #	Cleaning rules
 #		clean  - objects files
 #		fclean - objects files and librery
 #		re     - compile everything again
+
+all: $(NAME)
+
+#	Build executable
+$(NAME): $(OBJ)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+	@echo "✅ Executable $(NAME) created!"
+
+%.o: %.c $(HEADERS)
+	$(CC) $(CFLAGS) -c $< -o $@
+	@echo "🔨 Compiling $<"
+
 clean:
-	rm -f ${OBJS}
+	$(RM) $(OBJ)
 
 fclean: clean
-	rm -f $(NAME)
+	$(RM) $(NAME)
 
 re: fclean all
 
-check_headers:
-	@for hdr in $(HDRS); do \
-		if [ ! -f $$hdr ]; then \
-			echo "❌ Error: Header $$hdr not found!"; \
-			exit 1; \
-		fi \
-	done
-	@echo "✅ All headers are present!"
-
-structure:
-	@echo "📁 Project structure:"
-	@echo "  📂 Source files: $(words $(SRCS)) files"
-	@echo "  📂 Debug files: $(words $(DEBUG)) files"
-	@echo "  📂 Headers: $(words $(HDRS)) files"
-
-# Avoid conflicts
-.PHONY: all bonus clean fclean re 
+.PHONY: all clean fclean re

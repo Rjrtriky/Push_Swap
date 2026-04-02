@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   moves_utils.c                                      :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rjuarez- <rjuarez-@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: rjuarez- <rjuarez-@student.42.fr>          #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/24 18:19:25 by rjuarez-          #+#    #+#             */
-/*   Updated: 2026/04/02 17:53:49 by rjuarez-         ###   ########.fr       */
+/*   Created: 2025-10-18 18:07:04 by rjuarez-          #+#    #+#             */
+/*   Updated: 2025-10-18 18:07:04 by rjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "moves.h"
+#include "libft.h"
 
-void	ft_register(char *mov)
+size_t	ft_strlen(const char *str);
+
+size_t	ft_strlen(const char *str)
 {
-	ft_printf("%s\n", mov);
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
 }

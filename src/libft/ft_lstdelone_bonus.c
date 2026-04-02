@@ -1,18 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   moves_utils.c                                      :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rjuarez- <rjuarez-@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: rjuarez- <rjuarez-@student.42.fr>          #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/24 18:19:25 by rjuarez-          #+#    #+#             */
-/*   Updated: 2026/04/02 17:53:49 by rjuarez-         ###   ########.fr       */
+/*   Created: 2025-10-18 17:07:15 by rjuarez-          #+#    #+#             */
+/*   Updated: 2025-10-18 17:07:15 by rjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "moves.h"
+#include "libft.h"
 
-void	ft_register(char *mov)
+void	ft_lstdelone(t_list *lst, void (*del)(void *));
+
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	ft_printf("%s\n", mov);
+	if (lst == NULL)
+		return ;
+	del(lst->content);
+	free(lst);
 }

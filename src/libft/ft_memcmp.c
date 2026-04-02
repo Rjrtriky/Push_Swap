@@ -1,18 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   moves_utils.c                                      :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rjuarez- <rjuarez-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/24 18:19:25 by rjuarez-          #+#    #+#             */
-/*   Updated: 2026/04/02 17:53:49 by rjuarez-         ###   ########.fr       */
+/*   Created: 2025/10/18 17:08:16 by rjuarez-          #+#    #+#             */
+/*   Updated: 2026/04/01 21:26:14 by rjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "moves.h"
+#include "libft.h"
 
-void	ft_register(char *mov)
+int	ft_memcmp(const void *s1, const void *s2, size_t n);
+
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	ft_printf("%s\n", mov);
+	size_t			i;
+	unsigned char	*str1;
+	unsigned char	*str2;
+
+	i = 0;
+	str1 = (unsigned char *)s1;
+	str2 = (unsigned char *)s2;
+	while (i < n)
+	{
+		if (*str1 != *str2)
+		{
+			return ((int)(*str1 - *str2));
+		}
+		str1++;
+		str2++;
+		i++;
+	}
+	return (FALSE);
 }

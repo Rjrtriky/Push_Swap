@@ -6,11 +6,10 @@
 /*   By: rjuarez- <rjuarez-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/07 05:03:19 by rjuarez-          #+#    #+#             */
-/*   Updated: 2026/02/24 18:30:17 by rjuarez-         ###   ########.fr       */
+/*   Updated: 2026/04/02 17:03:59 by rjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "data.h"
 #include "moves.h"
 
 /*
@@ -57,8 +56,13 @@ void	ft_push(t_stack *stack_ori, t_stack *stack_des)
  */
 void	pa(t_data *data)
 {
-	ft_push(data->stack_b, data->stack_a);
-	ft_register ("pa");
+	if ((data != NULL) && (data->stack_b->size > 0))
+	{
+		if (data->stack_a == NULL)
+			data->stack_a = ft_stack_new();
+		ft_push(data->stack_b, data->stack_a);
+		ft_register ("pa");
+	}
 }
 
 /*PB
@@ -72,6 +76,11 @@ void	pa(t_data *data)
  */
 void	pb(t_data *data)
 {
-	ft_push(data->stack_a, data->stack_b);
-	ft_register ("pb");
+	if ((data != NULL) && (data->stack_a->size > 0))
+	{
+		if (data->stack_b == NULL)
+			data->stack_b = ft_stack_new();
+		ft_push(data->stack_a, data->stack_b);
+		ft_register ("pb");
+	}
 }

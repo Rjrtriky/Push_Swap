@@ -6,11 +6,10 @@
 /*   By: rjuarez- <rjuarez-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/07 05:03:45 by rjuarez-          #+#    #+#             */
-/*   Updated: 2026/02/24 02:20:11 by rjuarez-         ###   ########.fr       */
+/*   Updated: 2026/04/02 17:04:19 by rjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "data.h"
 #include "moves.h"
 
 /*ra (rotar a): Desplaza todos los elementos de la pila a en 1 posición.
@@ -40,7 +39,7 @@ void	ft_rotate(t_stack *stack)
 	{
 		node = ft_stack_pop(stack);
 		if (node != NULL)
-			ft_stack_add_end(stack, node);
+			ft_stack_add_last(stack, node);
 	}
 }
 
@@ -54,7 +53,7 @@ void	ft_rotate(t_stack *stack)
  */
 void	ra(t_data *data)
 {
-	if ((data != NULL) && (data->stack_a != NULL))
+	if ((data != NULL) && (data->stack_a != NULL) && (data->stack_a->size > 1))
 	{
 		ft_rotate(data->stack_a);
 		ft_register("ra");
@@ -71,7 +70,7 @@ void	ra(t_data *data)
  */
 void	rb(t_data *data)
 {
-	if ((data != NULL) && (data->stack_b != NULL))
+	if ((data != NULL) && (data->stack_b != NULL) && (data->stack_b->size > 1))
 	{
 		ft_rotate(data->stack_b);
 		ft_register("rb");
@@ -88,7 +87,8 @@ void	rb(t_data *data)
  */
 void	rr(t_data *data)
 {
-	if ((data != NULL) && (data->stack_a != NULL) && (data->stack_b != NULL))
+	if ((data != NULL) && (data->stack_a != NULL) && (data->stack_b != NULL)
+		&& (data->stack_a->size > 1) && (data->stack_b->size > 1))
 	{
 		ft_rotate(data->stack_a);
 		ft_rotate(data->stack_b);

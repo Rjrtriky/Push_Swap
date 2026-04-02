@@ -6,11 +6,10 @@
 /*   By: rjuarez- <rjuarez-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/07 05:02:44 by rjuarez-          #+#    #+#             */
-/*   Updated: 2026/02/24 02:20:19 by rjuarez-         ###   ########.fr       */
+/*   Updated: 2026/04/02 17:04:23 by rjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "data.h"
 #include "moves.h"
 
 /*sa (intercambiar a): Intercambia los dos primeros elementos de la parte
@@ -21,10 +20,10 @@ superior de la pila b.
 No haces nada si solo hay un elemento o no hay ninguno.
 ss: sa y sb simultáneamente.*/
 
+void	ft_swap(t_stack *stack);
 void	sa(t_data *data);
 void	sb(t_data *data);
 void	ss(t_data *data);
-void	ft_swap(t_stack *stack);
 
 /*FT_SWAP
  * @def Swaps the first two elements of the stack

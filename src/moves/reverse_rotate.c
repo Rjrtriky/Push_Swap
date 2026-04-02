@@ -6,11 +6,10 @@
 /*   By: rjuarez- <rjuarez-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/07 05:04:00 by rjuarez-          #+#    #+#             */
-/*   Updated: 2026/02/24 02:20:06 by rjuarez-         ###   ########.fr       */
+/*   Updated: 2026/04/02 17:04:14 by rjuarez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "data.h"
 #include "moves.h"
 
 /*rra (rotar a en sentido inverso): Desplaza todos los elementos de la pila a
@@ -41,7 +40,7 @@ void	ft_reverse_rotate(t_stack *stack)
 
 	if (stack != NULL)
 	{
-		node = ft_stack_pop_end(stack);
+		node = ft_stack_pop_last(stack);
 		if (node != NULL)
 			ft_stack_add(stack, node);
 	}
@@ -91,8 +90,8 @@ void	rrb(t_data *data)
  */
 void	rrr(t_data *data)
 {
-	if ((data != NULL) && (data->stack_a != NULL) && (data->stack_a->size > 1)
-		&& (data->stack_b != NULL) && (data->stack_b->size > 1))
+	if ((data != NULL) && (data->stack_a != NULL) && (data->stack_b != NULL)
+		&& (data->stack_a->size > 1) && (data->stack_b->size > 1))
 	{
 		ft_reverse_rotate(data->stack_a);
 		ft_reverse_rotate(data->stack_b);
