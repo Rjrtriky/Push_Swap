@@ -168,48 +168,48 @@ Al trabajar con el mitad superior o inferior del la pila conseguimos:
 
 ### Implementacion
 
-📁 push swap
-    ├── push_swap.h
-    ├── push_swap.c
-    ├── Makefile
-    ├── README.md
-    └── 📁src
-        ├── 📁[algorithm](#Módulo-algorithm)
-        │   ├── algorithm.h
-        │   ├── first_step.c
-        │   ├── target.c
-        │   ├── cost.c
-        │   ├── execute_best_move.c
-        │   └── algorithm.c
-        ├── 📁[data](#módulo-data)
-        │   ├── data.h
-        │   ├── node.c
-        │   ├── stack.c
-        │   ├── stack_utils.c
-        │   └── data.c
-        ├── 📁[ft_printf](#módulo-ft_printf)
-        │   ├── ft_printf.h
-        │   ├── ft_printf.c
-        │   ├── ft_conver.c
-        │   ├── ft_conver_numbers.c
-        │   └── ft_puts.c
-        ├── 📁[libft](#módulo-libft)
-        │   ├── libft.h
-        │   ├── ft_abs.c
-        │   ├── ft_atol.c
-        │   └── ft_recalloc.c
-        ├── 📁[moves](#módulo-moves)
-        │   ├── moves.h
-        │   ├── moves_utils.c
-        │   ├── push.c
-        │   ├── swap.c
-        │   ├── rotate.c
-        │   └── reverse_rotate.c
-        └── 📁[parser](#módulo-parser)
-            ├── parser.h
-            ├── parser.c
-            ├── split_args.c
-            └── validate.c
+	📁 push swap
+	    ├── push_swap.h
+	    ├── push_swap.c
+	    ├── Makefile
+	    ├── README.md
+	    └── 📁src
+	        ├── 📁[algorithm](#Módulo-algorithm)
+	        │   ├── algorithm.h
+	        │   ├── first_step.c
+	        │   ├── target.c
+	        │   ├── cost.c
+	        │   ├── execute_best_move.c
+	        │   └── algorithm.c
+	        ├── 📁[data](#módulo-data)
+	        │   ├── data.h
+	        │   ├── node.c
+	        │   ├── stack.c
+	        │   ├── stack_utils.c
+	        │   └── data.c
+	        ├── 📁[ft_printf](#módulo-ft_printf)
+	        │   ├── ft_printf.h
+	        │   ├── ft_printf.c
+	        │   ├── ft_conver.c
+	        │   ├── ft_conver_numbers.c
+	        │   └── ft_puts.c
+	        ├── 📁[libft](#módulo-libft)
+	        │   ├── libft.h
+	        │   ├── ft_abs.c
+	        │   ├── ft_atol.c
+	        │   └── ft_recalloc.c
+	        ├── 📁[moves](#módulo-moves)
+	        │   ├── moves.h
+	        │   ├── moves_utils.c
+	        │   ├── push.c
+	        │   ├── swap.c
+	        │   ├── rotate.c
+	        │   └── reverse_rotate.c
+	        └── 📁[parser](#módulo-parser)
+	            ├── parser.h
+	            ├── parser.c
+	            ├── split_args.c
+	            └── validate.c
 
 
 
