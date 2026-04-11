@@ -181,7 +181,7 @@ Al trabajar con el mitad superior o inferior del la pila conseguimos:
 		│   ├── cost.c<br>
 		│   ├── execute_best_move.c<br>
 		│   └── algorithm.c<br>
-		├── 📁[data](###Módulo-data)<br>
+		├── 📁[data](https://github.com/Rjrtriky/Push_Swap/edit/main/README.md#-m%C3%B3dulo-data)<br>
 		│   ├── data.h<br>
 		│   ├── node.c<br>
 		│   ├── stack.c<br>
@@ -210,8 +210,6 @@ Al trabajar con el mitad superior o inferior del la pila conseguimos:
 			├── parser.c<br>
 			├── split_args.c<br>
 			└── validate.c<br>
-
-
 
 ### 📦 Módulo Data
 
@@ -249,8 +247,6 @@ Al trabajar con el mitad superior o inferior del la pila conseguimos:
 4. Establece n_nodes a 0
 5. Libera data
 
----
-
 ##### FT_DATA_INDEX - `void ft_data_index(t_data *data)`
 **Definición:** Asigna índices ordinales a todos los nodos de stack A y stack B
 
@@ -262,8 +258,6 @@ Al trabajar con el mitad superior o inferior del la pila conseguimos:
 **Comportamiento:**
 1. Indexa stack A con ft_stack_index_ord()
 2. Si stack B existe y no está vacío, asigna índices secuenciales (1,2,3...)
-
----
 
 ##### FT_DATA_STACK_A_ADD - `int ft_data_stack_a_add(t_data *data, int nbr)`
 **Definición:** Crea un nuevo nodo con el número dado y lo añade al final del stack A
@@ -283,8 +277,6 @@ Al trabajar con el mitad superior o inferior del la pila conseguimos:
 4. Añade nodo al final del stack con ft_stack_add_last()
 5. Incrementa n_nodes
 
----
-
 ##### FT_DATA_STACK_B_ADD - `int ft_data_stack_b_add(t_data *data, int nbr)`
 **Definición:** Crea un nuevo nodo con el número dado y lo añade al principio del stack B
 
@@ -303,8 +295,6 @@ Al trabajar con el mitad superior o inferior del la pila conseguimos:
 4. Añade nodo al principio del stack con ft_stack_add()
 5. Incrementa n_nodes
 
----
-
 #### stack.c
 
 ##### FT_STACK_NEW - `t_stack *ft_stack_new(void)`
@@ -322,8 +312,6 @@ Al trabajar con el mitad superior o inferior del la pila conseguimos:
 3. Inicializa end_node a NULL
 4. Inicializa size a 0
 
----
-
 ##### FT_STACK_FREE - `int ft_stack_free(t_stack *stack)`
 **Definición:** Libera la memoria del stack y de todos sus nodos
 
@@ -338,8 +326,6 @@ Al trabajar con el mitad superior o inferior del la pila conseguimos:
 1. Extrae y elimina todos los nodos del stack con ft_stack_pop()
 2. Libera cada nodo con ft_node_free()
 3. Libera la estructura del stack
-
----
 
 ##### FT_STACK_INDEX_ORD - `void ft_stack_index_ord(t_stack *stack)`
 **Definición:** Asigna índices ordinales (1..n) a los nodos del stack basados en sus valores numéricos
@@ -356,8 +342,6 @@ Al trabajar con el mitad superior o inferior del la pila conseguimos:
 4. Asigna el índice i a ese nodo
 
 **Ejemplo:** [42, 7, 99, 23, 5] → [4, 2, 5, 3, 1]
-
----
 
 ##### FT_STACK_ADD - `int ft_stack_add(t_stack *stack, t_node *node)`
 **Definición:** Añade un nodo al principio del stack
@@ -377,8 +361,6 @@ Al trabajar con el mitad superior o inferior del la pila conseguimos:
 4. Actualiza first_node al nuevo nodo
 5. Incrementa size
 
----
-
 ##### FT_STACK_POP - `t_node *ft_stack_pop(t_stack *stack)`
 **Definición:** Extrae y retorna el primer nodo del stack
 
@@ -396,8 +378,6 @@ Al trabajar con el mitad superior o inferior del la pila conseguimos:
 4. Si el stack queda vacío, end_node también es NULL
 5. Decrementa size
 6. Desconecta el nodo extraído (next y previous a NULL)
-
----
 
 #### stack_utils.c
 
@@ -419,8 +399,6 @@ Al trabajar con el mitad superior o inferior del la pila conseguimos:
 4. Actualiza end_node al nuevo nodo
 5. Incrementa size
 
----
-
 ##### FT_STACK_POP_LAST - `t_node *ft_stack_pop_last(t_stack *stack)`
 **Definición:** Extrae y retorna el último nodo del stack
 
@@ -439,8 +417,6 @@ Al trabajar con el mitad superior o inferior del la pila conseguimos:
 5. Decrementa size
 6. Desconecta el nodo extraído
 
----
-
 ##### FT_STACK_INDEX_CLEAR - `void ft_stack_index_clear(t_stack *stack)`
 **Definición:** Establece el índice de todos los nodos del stack a 0
 
@@ -452,8 +428,6 @@ Al trabajar con el mitad superior o inferior del la pila conseguimos:
 **Comportamiento:**
 1. Recorre todos los nodos del stack
 2. Asigna index = 0 a cada uno
-
----
 
 ##### FT_IS_SORT_STACK - `int ft_is_sort_stack(t_stack *stack)`
 **Definición:** Verifica si el stack está ordenado circularmente según los índices
@@ -468,8 +442,6 @@ Al trabajar con el mitad superior o inferior del la pila conseguimos:
 **Comportamiento:**
 1. Encuentra el nodo con índice 1
 2. Verifica que los índices sigan el orden circular ascendente
-
----
 
 #### node.c
 
@@ -492,8 +464,6 @@ Al trabajar con el mitad superior o inferior del la pila conseguimos:
 6. Inicializa target a NULL
 7. Inicializa cost_rot_a, cost_rot_b, cost_total a 0
 
----
-
 ##### FT_NODE_FREE - `int ft_node_free(t_node *node)`
 **Definición:** Libera la memoria de un nodo
 
@@ -507,8 +477,6 @@ Al trabajar con el mitad superior o inferior del la pila conseguimos:
 **Comportamiento:**
 1. Verifica que node no sea NULL
 2. Libera la memoria del nodo
-
----
 
 ### 📦 Módulo Algorithm
 
@@ -532,8 +500,6 @@ Al trabajar con el mitad superior o inferior del la pila conseguimos:
    - Ejecuta el movimiento de menor coste
 4. Ordena final rotando hasta que el índice 1 quede arriba
 
----
-
 ##### FT_ROTATE_SORT - `void ft_rotate_sort(t_data *data)`
 **Definición:** Rota el stack A para dejar el elemento con índice 1 en la cima
 
@@ -547,8 +513,6 @@ Al trabajar con el mitad superior o inferior del la pila conseguimos:
 2. Si está en la mitad superior, usa rra
 3. Si está en la mitad inferior, usa ra
 4. Rota hasta que el índice 1 sea el first_node
-
----
 
 #### first_step.c
 
@@ -564,8 +528,6 @@ Al trabajar con el mitad superior o inferior del la pila conseguimos:
 1. Mientras stack A tenga más de 3 elementos, hace pb
 2. Si quedan exactamente 3, llama a ft_sort_3()
 3. Indexa el stack A resultante
-
----
 
 ##### FT_SORT_3 - `void ft_sort_3(t_data *data)`
 **Definición:** Ordena un stack de exactamente 3 elementos
@@ -583,8 +545,6 @@ Al trabajar con el mitad superior o inferior del la pila conseguimos:
 | 3,1,2 | ra |
 | 2,3,1 | sa + ra |
 | 1,3,2 | rra |
-
----
 
 #### target.c
 
@@ -607,9 +567,6 @@ Stack A: [1, 3, 5, 7, 9]
 node_b->num = 6 → target = 7
 node_b->num = 10 → target = 1 (wrap around)
 
-
----
-
 ##### FT_ASSIGN_TARGETS_STACK_B - `void ft_assign_targets_stack_b(t_data *data)`
 **Definición:** Asigna targets a todos los nodos de stack B
 
@@ -621,8 +578,6 @@ node_b->num = 10 → target = 1 (wrap around)
 **Comportamiento:**
 1. Recorre todos los nodos de stack B
 2. Para cada uno, llama a ft_find_node_target()
-
----
 
 #### cost.c
 
@@ -640,8 +595,6 @@ node_b->num = 10 → target = 1 (wrap around)
 **Comportamiento:**
 1. Recorre el stack contando posiciones
 2. Cuando encuentra el nodo, retorna la posición
-
----
 
 ##### FT_CALCULATE_COST_B - `void ft_calculate_cost_b(t_stack *stack_b, t_node *node_b)`
 **Definición:** Calcula el coste de rotación para traer un nodo de B al tope
@@ -661,9 +614,6 @@ node_b->num = 10 → target = 1 (wrap around)
 Stack B size 5, nodo en posición 4:
 4 > 2.5 → cost_rot_b = -(5-4) = -1 (1 rrb)
 
-
----
-
 ##### FT_CALCULATE_COST_A - `void ft_calculate_cost_a(t_stack *stack_a, t_node *node_b)`
 **Definición:** Calcula el coste de rotación para traer el target de A al tope
 
@@ -677,8 +627,6 @@ Stack B size 5, nodo en posición 4:
 1. Obtiene la posición del target en stack A
 2. Si posición ≤ size/2: coste = posición (usar ra)
 3. Si posición > size/2: coste = -(size - posición) (usar rra)
-
----
 
 ##### FT_CALCULATE_COSTS - `void ft_calculate_costs(t_data *data)`
 **Definición:** Calcula el coste total de mover cada nodo de B a A
@@ -700,8 +648,6 @@ Stack B size 5, nodo en posición 4:
 | Misma dirección | `max(abs(a), abs(b))` | a=2, b=3 → 3 movimientos |
 | Direcciones opuestas | `abs(a) + abs(b)` | a=2, b=-3 → 5 movimientos |
 
----
-
 #### execute_best_move.c
 
 #### FT_FIND_BEST_NODE - `t_node *ft_find_best_node(t_stack *stack_b)`
@@ -719,8 +665,6 @@ Stack B size 5, nodo en posición 4:
 2. Compara cost_total de cada uno
 3. Retorna el que tiene el valor más bajo
 
----
-
 ##### FT_ROTATE_STACK_A - `void ft_rotate_stack_a(t_data *data, int *cost_a)`
 **Definición:** Ejecuta las rotaciones necesarias en stack A según el coste
 
@@ -734,8 +678,6 @@ Stack B size 5, nodo en posición 4:
 1. Mientras cost_a > 0: ejecuta ra() y decrementa cost_a
 2. Mientras cost_a < 0: ejecuta rra() y incrementa cost_a
 
----
-
 ##### FT_ROTATE_STACK_B - `void ft_rotate_stack_b(t_data *data, int *cost_b)`
 **Definición:** Ejecuta las rotaciones necesarias en stack B según el coste
 
@@ -748,8 +690,6 @@ Stack B size 5, nodo en posición 4:
 **Comportamiento:**
 1. Mientras cost_b > 0: ejecuta rb() y decrementa cost_b
 2. Mientras cost_b < 0: ejecuta rrb() y incrementa cost_b
-
----
 
 ##### FT_ROTATE_STACKS_FOR_NODE - `void ft_rotate_stacks_for_node(t_data *data, t_node *best_node)`
 **Definición:** Ejecuta rotaciones conjuntas y luego individuales para un nodo
@@ -769,9 +709,6 @@ Stack B size 5, nodo en posición 4:
 Sin optimización: ra, ra, ra, rb, rb (5 operaciones)
 Con optimización: rr, rr, ra (3 operaciones)
 
-
----
-
 ##### FT_EXECUTE_BEST_MOVE - `void ft_execute_best_move(t_data *data)`
 **Definición:** Encuentra y ejecuta el movimiento de menor coste
 
@@ -784,8 +721,6 @@ Con optimización: rr, rr, ra (3 operaciones)
 1. Encuentra el mejor nodo con ft_find_best_node()
 2. Rota ambos stacks para dejar el nodo y su target en la cima
 3. Ejecuta pa() para mover el nodo de B a A
-
----
 
 ### 📦 Módulo Moves
 
@@ -804,8 +739,6 @@ Con optimización: rr, rr, ra (3 operaciones)
 2. Extrae los dos primeros nodos con ft_stack_pop()
 3. Los vuelve a añadir en orden inverso
 
----
-
 ##### SA - `void sa(t_data *data)`
 **Definición:** Intercambia los dos primeros elementos de stack A
 
@@ -818,8 +751,6 @@ Con optimización: rr, rr, ra (3 operaciones)
 1. Verifica que stack A tenga al menos 2 elementos
 2. Ejecuta ft_swap() en stack A
 3. Registra el movimiento "sa"
-
----
 
 ##### SB - `void sb(t_data *data)`
 **Definición:** Intercambia los dos primeros elementos de stack B
@@ -834,8 +765,6 @@ Con optimización: rr, rr, ra (3 operaciones)
 2. Ejecuta ft_swap() en stack B
 3. Registra el movimiento "sb"
 
----
-
 ##### SS - `void ss(t_data *data)`
 **Definición:** Ejecuta sa y sb simultáneamente
 
@@ -849,8 +778,6 @@ Con optimización: rr, rr, ra (3 operaciones)
 2. Ejecuta ft_swap() en stack A
 3. Ejecuta ft_swap() en stack B
 4. Registra el movimiento "ss"
-
----
 
 #### push.c
 
@@ -867,8 +794,6 @@ Con optimización: rr, rr, ra (3 operaciones)
 1. Extrae el primer nodo de stack_ori con ft_stack_pop()
 2. Si el nodo existe, lo añade al principio de stack_des con ft_stack_add()
 
----
-
 ###### PA - `void pa(t_data *data)`
 **Definición:** Mueve el primer elemento de stack B a stack A
 
@@ -882,8 +807,6 @@ Con optimización: rr, rr, ra (3 operaciones)
 2. Si stack A no existe, lo crea
 3. Ejecuta ft_push() de B a A
 4. Registra el movimiento "pa"
-
----
 
 ##### PB - `void pb(t_data *data)`
 **Definición:** Mueve el primer elemento de stack A a stack B
@@ -899,8 +822,6 @@ Con optimización: rr, rr, ra (3 operaciones)
 3. Ejecuta ft_push() de A a B
 4. Registra el movimiento "pb"
 
----
-
 #### rotate.c
 
 #### FT_ROTATE - `void ft_rotate(t_stack *stack)`
@@ -915,8 +836,6 @@ Con optimización: rr, rr, ra (3 operaciones)
 1. Extrae el primer nodo con ft_stack_pop()
 2. Si el nodo existe, lo añade al final con ft_stack_add_last()
 
----
-
 ##### RA - `void ra(t_data *data)`
 **Definición:** Rota stack A hacia arriba
 
@@ -930,8 +849,6 @@ Con optimización: rr, rr, ra (3 operaciones)
 2. Ejecuta ft_rotate() en stack A
 3. Registra el movimiento "ra"
 
----
-
 ##### RB - `void rb(t_data *data)`
 **Definición:** Rota stack B hacia arriba
 
@@ -944,8 +861,6 @@ Con optimización: rr, rr, ra (3 operaciones)
 1. Verifica que stack B tenga al menos 2 elementos
 2. Ejecuta ft_rotate() en stack B
 3. Registra el movimiento "rb"
-
----
 
 ##### RR - `void rr(t_data *data)`
 **Definición:** Ejecuta ra y rb simultáneamente
@@ -961,8 +876,6 @@ Con optimización: rr, rr, ra (3 operaciones)
 3. Ejecuta ft_rotate() en stack B
 4. Registra el movimiento "rr"
 
----
-
 #### reverse_rotate.c
 
 ##### FT_REVERSE_ROTATE - `void ft_reverse_rotate(t_stack *stack)`
@@ -977,8 +890,6 @@ Con optimización: rr, rr, ra (3 operaciones)
 1. Extrae el último nodo con ft_stack_pop_last()
 2. Si el nodo existe, lo añade al principio con ft_stack_add()
 
----
-
 ##### RRA - `void rra(t_data *data)`
 **Definición:** Rota stack A hacia abajo
 
@@ -992,8 +903,6 @@ Con optimización: rr, rr, ra (3 operaciones)
 2. Ejecuta ft_reverse_rotate() en stack A
 3. Registra el movimiento "rra"
 
----
-
 ##### RRB - `void rrb(t_data *data)`
 **Definición:** Rota stack B hacia abajo
 
@@ -1006,8 +915,6 @@ Con optimización: rr, rr, ra (3 operaciones)
 1. Verifica que stack B tenga al menos 2 elementos
 2. Ejecuta ft_reverse_rotate() en stack B
 3. Registra el movimiento "rrb"
-
----
 
 ##### RRR - `void rrr(t_data *data)`
 **Definición:** Ejecuta rra y rrb simultáneamente
@@ -1023,8 +930,6 @@ Con optimización: rr, rr, ra (3 operaciones)
 3. Ejecuta ft_reverse_rotate() en stack B
 4. Registra el movimiento "rrr"
 
----
-
 #### moves_utils.c
 
 ##### FT_REGISTER - `void ft_register(char *mov)`
@@ -1038,8 +943,6 @@ Con optimización: rr, rr, ra (3 operaciones)
 **Comportamiento:**
 1. Imprime el movimiento usando ft_printf()
 2. Añade un salto de línea al final
-
----
 
 ### 📦 Módulo Parser
 
@@ -1062,8 +965,6 @@ Con optimización: rr, rr, ra (3 operaciones)
 3. Para cada argumento, llama a ft_process_argument()
 4. Si hay error, libera todo y retorna NULL
 
----
-
 ##### FT_PROCESS_ARGUMENT - `static int ft_process_argument(t_data *data, char *arg)`
 **Definición:** Procesa un argumento individual (puede contener múltiples números)
 
@@ -1080,8 +981,6 @@ Con optimización: rr, rr, ra (3 operaciones)
 2. Procesa cada token con ft_process_tokens()
 3. Si no contiene espacios, lo valida como número individual
 
----
-
 ##### FT_PROCESS_TOKENS - `static int ft_process_tokens(t_data *data, char **tokens)`
 **Definición:** Procesa un array de tokens (números en string)
 
@@ -1097,8 +996,6 @@ Con optimización: rr, rr, ra (3 operaciones)
 1. Itera sobre cada token
 2. Valida y convierte cada token a número
 3. Añade el número a stack A
-
----
 
 #### split_args.c
 
@@ -1118,8 +1015,6 @@ Con optimización: rr, rr, ra (3 operaciones)
 3. Copia cada token individualmente
 4. Termina el array con NULL
 
----
-
 ##### FT_COUNT_TOKENS - `static int ft_count_tokens(char *str)`
 **Definición:** Cuenta cuántos tokens (números) hay en un string
 
@@ -1132,8 +1027,6 @@ Con optimización: rr, rr, ra (3 operaciones)
 1. Itera sobre el string
 2. Ignora espacios
 3. Cada secuencia de no-espacios cuenta como un token
-
----
 
 ##### FT_COPY_TOKEN - `static char *ft_copy_token(char *str, int *i)`
 **Definición:** Copia un token desde una posición del string
@@ -1151,8 +1044,6 @@ Con optimización: rr, rr, ra (3 operaciones)
 2. Calcula la longitud del token
 3. Copia el token a nueva memoria
 
----
-
 ##### FT_FREE_SPLIT - `void ft_free_split(char **tokens)`
 **Definición:** Libera la memoria de un array de tokens creado con ft_split_args
 
@@ -1164,8 +1055,6 @@ Con optimización: rr, rr, ra (3 operaciones)
 **Comportamiento:**
 1. Itera sobre el array liberando cada token
 2. Libera el array principal
-
----
 
 #### validate.c
 
@@ -1187,7 +1076,6 @@ Con optimización: rr, rr, ra (3 operaciones)
 **Ejemplos válidos:** "42", "+42", "-5"
 **Ejemplos inválidos:** "", "+", "-", "42a", "  5"
 
----
 ##### FT_IS_DUPLICATE - `int ft_is_duplicate(t_stack *stack, int value)`
 **Definición:** Verifica si un valor ya existe en el stack
 
@@ -1203,8 +1091,6 @@ Con optimización: rr, rr, ra (3 operaciones)
 1. Recorre todos los nodos del stack
 2. Compara node->num con value
 3. Si encuentra coincidencia, retorna TRUE
-
----
 
 ##### FT_VALIDATE_INPUT_NUMBER - `int ft_validate_input_number(t_data *data, char *str, int *num)`
 **Definición:** Valida un número y lo almacena si es correcto
@@ -1223,9 +1109,8 @@ Con optimización: rr, rr, ra (3 operaciones)
 2. Rango dentro de INT_MIN e INT_MAX (usando ft_atol)
 3. No duplicado en stack A
 
----
-
 ### 📦 Módulo Libft
+Solo incluyo las funciones que ya nuevas respecto al proyecto libft original, aunque ft_recalloc no se use en este.
 
 #### ft_abs.c
 
@@ -1240,8 +1125,6 @@ Con optimización: rr, rr, ra (3 operaciones)
 **Comportamiento:**
 - Si num ≥ 0, retorna num
 - Si num < 0, retorna -num
-
----
 
 #### ft_atol.c
 
@@ -1258,8 +1141,6 @@ Con optimización: rr, rr, ra (3 operaciones)
 2. Procesa signo opcional (+ o -)
 3. Convierte dígitos a número
 4. Retorna el resultado como long
-
----
 
 #### ft_recalloc.c
 
