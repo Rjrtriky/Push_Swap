@@ -181,7 +181,7 @@ Al trabajar con el mitad superior o inferior del la pila conseguimos:
 		│   ├── cost.c<br>
 		│   ├── execute_best_move.c<br>
 		│   └── algorithm.c<br>
-		├── 📁[data](#módulo-data)<br>
+		├── 📁[data](###Módulo-data)<br>
 		│   ├── data.h<br>
 		│   ├── node.c<br>
 		│   ├── stack.c<br>
