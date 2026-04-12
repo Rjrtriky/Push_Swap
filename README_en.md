@@ -1204,3 +1204,4 @@ This will produce the `push_swap` executable.
 - Evaluation of different sorting algorithms with step-by-step explanations to understand how they work.
 - Generation of flowcharts for the README.
 - Automation of function descriptions for each file.
+- Translate the readme file.
