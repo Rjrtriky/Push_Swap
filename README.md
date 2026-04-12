@@ -1203,4 +1203,5 @@ Esto generará el ejecutable `push_swap`.
 - Evaluación de las diferentes estructuras de datos.
 - Evaluación de los diferentes algoritmos de ordenación y explicaciones paso a paso para entender su funcionamiento.
 - Elaboración de los diagramas de flujo para el README.
+- Traducir el fichero Readme.
 - Automatización de las descripciones de las funciones de cada fichero.
