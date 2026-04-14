@@ -14,6 +14,22 @@
 
 void	*ft_recalloc(unsigned char *old_ptr, unsigned long int new_size);
 
+/* FT_RECALLOC
+ * @def Reallocates memory with initialization of new memory to zero
+ * @param
+ * 	{unsigned char*} old_ptr - Pointer to previously allocated memory 
+ * 							   (can be NULL)
+ * 	{unsigned long int} new_size - New size in bytes to allocate
+ * @returns
+ *		OK - Pointer to the newly allocated memory (old_ptr is freed)
+ *		KO - NULL if new_size is 0 or memory allocation fails
+ * @cond
+ *		- If new_size is 0, old_ptr is freed and NULL is returned
+ *		- If old_ptr is NULL, behaves like ft_calloc(new_size, 1)
+ *		- New memory is zero-initialized using ft_calloc
+ *		- Only up to the smaller of old_size and new_size bytes are copied
+ *		- old_size is determined using ft_strlen on old_ptr
+ * */
 void	*ft_recalloc(unsigned char *old_ptr, unsigned long int new_size)
 {
 	unsigned char	*new_ptr;

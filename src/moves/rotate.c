@@ -12,12 +12,6 @@
 
 #include "moves.h"
 
-/*ra (rotar a): Desplaza todos los elementos de la pila a en 1 posición.
-El primer elemento se convierte en el último.
-rb (rotar b): Desplaza todos los elementos de la pila b en 1 posición.
-El primer elemento se convierte en el último.
-rr: ra y rb simultáneamente.*/
-
 void	ra(t_data *data);
 void	rb(t_data *data);
 void	rr(t_data *data);

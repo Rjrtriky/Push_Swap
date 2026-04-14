@@ -105,7 +105,6 @@ void	ft_data_index(t_data *data)
 	}
 }
 
-
 /*FT_DATA_STACK_A_ADD
  * @def Creates a new node with the given number and adds it to the beginning
  * 		of stack a
@@ -169,4 +168,3 @@ int	ft_data_stack_b_add(t_data *data, int nbr)
 	data->n_nodes++;
 	return (TRUE);
 }
-

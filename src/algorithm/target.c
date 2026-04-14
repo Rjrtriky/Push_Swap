@@ -15,9 +15,21 @@
 void	ft_find_node_target(t_stack *stack_a, t_node *node_b);
 void	ft_assign_targets_stack_b(t_data *data);
 
-/*void	find_node_target(t_stack *stack_a, t_node *node_b)
-pone en node_b->target un puntero al nodo inmediatemante mayor de la stack_A*/
-
+/* FT_FIND_NODE_TARGET
+ * @def Finds the target node in stack A for a given node from stack B.
+ *		The target is the node with the smallest larger value than node B,
+ *		or the minimum if node B is larger than all
+ * @param
+ * 	{t_stack*} stack_a - Stack A where to search for the target
+ * 	{t_node*} node_b - Node from stack B that needs a target
+ * @returns
+ *		OK - void (sets node_b->target)
+ *		KO - void (does not set target if not found)
+ * @cond
+ *		- stack_a cannot be NULL
+ *		- node_b cannot be NULL
+ *		- stack_a must have at least one element
+ * */
 void	ft_find_node_target(t_stack *stack_a, t_node *node_b)
 {
 	t_node	*node_a;
@@ -46,9 +58,20 @@ void	ft_find_node_target(t_stack *stack_a, t_node *node_b)
 	node_b->target = node_best;
 }
 
-/*void	assign_targets_stack_b(t_data *data) 
-recorro cada nodo de stack_b poniendo en el nodo destino respecto a la stack_A*/
-
+/* FT_ASSIGN_TARGETS_STACK_B
+ * @def Assigns a target node to each node in stack B by traversing the
+ *		entire stack and calling ft_find_node_target for each node
+ * @param
+ * 	{t_data*} data - Main structure containing stacks A and B
+ * @returns
+ *		OK - void (no return value)
+ *		KO - void (no return value)
+ * @cond
+ *		- data cannot be NULL
+ *		- stack_b cannot be NULL
+ *		- stack_b must have at least one element
+ *		- stack_a must have at least one element
+ * */
 void	ft_assign_targets_stack_b(t_data *data)
 {
 	t_node	*node_b;
@@ -60,4 +83,3 @@ void	ft_assign_targets_stack_b(t_data *data)
 		node_b = node_b->next;
 	}
 }
-

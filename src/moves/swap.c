@@ -12,14 +12,6 @@
 
 #include "moves.h"
 
-/*sa (intercambiar a): Intercambia los dos primeros elementos de la parte
-superior de la pila a.
-No haces nada si solo hay un elemento o no hay ninguno.
-sb (intercambiar b): Intercambia los dos primeros elementos de la parte 
-superior de la pila b.
-No haces nada si solo hay un elemento o no hay ninguno.
-ss: sa y sb simultáneamente.*/
-
 void	ft_swap(t_stack *stack);
 void	sa(t_data *data);
 void	sb(t_data *data);

@@ -12,15 +12,6 @@
 
 #include "moves.h"
 
-/*rra (rotar a en sentido inverso): Desplaza todos los elementos de la pila a
-en 1 posición.
-El último elemento se convierte en el primero.
-rrb (rotar b en sentido inverso): Desplaza todos los elementos de la pila b
-en 1 posición.
-El último elemento se convierte en el primero.
-rrr: rra y rrb simultáneamente.
-*/
-
 void	rra(t_data *data);
 void	rrb(t_data *data);
 void	rrr(t_data *data);

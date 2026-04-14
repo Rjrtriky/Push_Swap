@@ -15,6 +15,19 @@
 void	ft_stack_a_only_3(t_data *data);
 void	ft_sort_3(t_data *data);
 
+/* FT_STACK_A_ONLY_3
+ * @def Reduces stack A by moving all elements except 3 to stack B,
+ *		then sorts the remaining 3 elements
+ * @param
+ * 	{t_data*} data - Main structure containing stacks A and B
+ * @returns
+ *		OK - void (no return value)
+ *		KO - void (no return value)
+ * @cond
+ *		- data cannot be NULL
+ *		- stack_a cannot be NULL
+ *		- stack_a must have at least 3 elements
+ * */
 void	ft_stack_a_only_3(t_data *data)
 {
 	t_stack	*stack_a;
@@ -29,6 +42,19 @@ void	ft_stack_a_only_3(t_data *data)
 	ft_stack_index_ord(stack_a);
 }
 
+/* FT_SORT_3
+ * @def Sorts a stack of exactly 3 elements using the minimum number
+ *		of operations possible (maximum 3 moves)
+ * @param
+ * 	{t_data*} data - Main structure containing stack A of 3 elements
+ * @returns
+ *		OK - void (no return value)
+ *		KO - void (no return value)
+ * @cond
+ *		- data cannot be NULL
+ *		- stack_a cannot be NULL
+ *		- stack_a->size must be exactly 3
+ * */
 void	ft_sort_3(t_data *data)
 {
 	int	num1;

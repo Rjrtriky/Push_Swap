@@ -12,16 +12,6 @@
 
 #include "libft.h"
 
-int	ft_abs(int num);
-
-int	ft_abs(int num)
-{
-	if (num >= 0)
-		return (num);
-	else
-		return (-1 * num);
-}
-
 /* FT_ABS
  * @def Returns the absolute value of a signed long long integer,
  *      converted to unsigned long integer.
@@ -33,3 +23,12 @@ int	ft_abs(int num)
  *      OK - Absolute value of nbr, cast to unsigned long int.
  */
 
+int	ft_abs(int num);
+
+int	ft_abs(int num)
+{
+	if (num >= 0)
+		return (num);
+	else
+		return (-1 * num);
+}

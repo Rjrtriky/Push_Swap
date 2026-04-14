@@ -33,8 +33,8 @@ void		ft_free_split(char **tokens);
 char		**ft_split_args(char *str);
 
 // validate.c
-int	ft_is_valid_token(char *str);
-int	ft_is_duplicate(t_stack *stack, int value);
-int	ft_validate_input_number(t_data *data, char *str, int *num);
+int			ft_is_valid_token(char *str);
+int			ft_is_duplicate(t_stack *stack, int value);
+int			ft_validate_input_number(t_data *data, char *str, int *num);
 
 #endif

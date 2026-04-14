@@ -12,10 +12,20 @@
 
 #include "libft.h"
 
-int			ft_atoi(const char *s);
-
+int			ft_atol(const char *s);
 static int	ft_strspaces(const char c);
 
+/* FT_STRSPACES (static helper function)
+ * @def Checks if a character is a whitespace character
+ * @param
+ * 	{const char} c - Character to check
+ * @returns
+ *		OK - 1 if character is whitespace (space, tab, newline, vertical tab,
+ *			 form feed, carriage return)
+ *		KO - 0 if character is not whitespace
+ * @cond
+ *		- Function is static and only used within ft_atol
+ * */
 static int	ft_strspaces(const char c)
 {
 	if ((c == ' ') || (c == '\t') || (c == '\n') || (c == '\v') || (c == '\f')
@@ -25,6 +35,21 @@ static int	ft_strspaces(const char c)
 		return (0);
 }
 
+/* FT_ATOL
+ * @def Converts a string to a long integer, handling leading spaces and an 
+ *      optional sign
+ * @param
+ * 	{const char*} str - String to convert
+ * @returns
+ *		OK - Long integer value of the converted string
+ *		KO - 0 if no digits found (returns 0, but this is also a valid
+             conversion)
+ * @cond
+ *		- str cannot be NULL
+ *		- String may contain leading whitespaces (space, tab, newline, etc.)
+ *		- String may have one optional '+' or '-' sign before digits
+ *		- Conversion stops at first non-digit character
+ * */
 long	ft_atol(const char *s)
 {
 	long	aux;

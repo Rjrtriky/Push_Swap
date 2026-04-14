@@ -12,18 +12,6 @@
 
 #include "moves.h"
 
-/*
-pa (empujar a): Toma el primer elemento de la parte superior de b y colócalo en
-la parte superior de a.
-No haces nada si b está vacío. 
-pb (empujar b): Toma el primer elemento en la parte superior de a y colócalo en
-la parte superior de b.
-No hacer nada si a está vacío.*/
-
-/*void	pa(t_data *data);
-void	pb(t_data *data);
-void	ft_push(t_stack *stack_ori, t_stack *stack_des);*/
-
 /*FT_PUSH
  * @def Pops a node from origin stack and pushes it to destination stack
  *

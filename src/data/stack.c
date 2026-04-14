@@ -100,8 +100,8 @@ void	ft_stack_index_ord(t_stack *stack)
 		node_min = NULL;
 		while (node != NULL)
 		{
-			if ((node->index == 0) && ((node_min == NULL) ||
-					(node->num < node_min->num)))
+			if ((node->index == 0) && ((node_min == NULL)
+					|| (node->num < node_min->num)))
 				node_min = node;
 			node = node->next;
 		}

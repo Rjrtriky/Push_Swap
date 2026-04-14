@@ -89,7 +89,7 @@ void	ft_stack_index_clear(t_stack *stack)
 	while (node != NULL)
 	{
 		node->index = 0;
-		node= node->next;
+		node = node->next;
 	}
 }
 
