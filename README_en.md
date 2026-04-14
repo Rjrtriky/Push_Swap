@@ -1165,6 +1165,33 @@ This is the same as the original ft_printf project and is not broken down furthe
 
 ### Compilation
 
+If we want to compile without the Makefile, we will use the following command:
+
+```bash
+cc -Wall -Wextra -Werror \
+push_swap.c \
+src/data/data.c \
+src/data/node.c \
+src/data/stack.c \
+src/data/stack_utils.c \
+src/parser/parser.c \
+src/parser/split_args.c \
+src/parser/validate.c \
+src/moves/swap.c \
+src/moves/push.c \
+src/moves/rotate.c \
+src/moves/reverse_rotate.c \
+src/moves/moves_utils.c \
+src/algorithm/algorithm.c \
+src/algorithm/first_step.c \
+src/algorithm/target.c \
+src/algorithm/cost.c \
+src/algorithm/execute_best_move.c \
+src/libft/*.c \
+src/ft_printf/*.c \
+-o push_swap
+```
+
 The project includes a Makefile, so compilation only requires running `make`. All compiler flags and settings are defined in the Makefile itself.
 
 ```bash
