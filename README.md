@@ -1165,6 +1165,33 @@ Como es el mismo proyecto original, no se desglosa.
 
 ### Compilación
 
+Si queremos compilar sin el Makefile, usaremos el siguiente comando:
+
+```bash
+cc -Wall -Wextra -Werror \
+    push_swap.c \
+    src/data/data.c \
+    src/data/node.c \
+    src/data/stack.c \
+    src/data/stack_utils.c \
+    src/parser/parser.c \
+    src/parser/split_args.c \
+    src/parser/validate.c \
+    src/moves/swap.c \
+    src/moves/push.c \
+    src/moves/rotate.c \
+    src/moves/reverse_rotate.c \
+    src/moves/moves_utils.c \
+    src/algorithm/algorithm.c \
+    src/algorithm/first_step.c \
+    src/algorithm/target.c \
+    src/algorithm/cost.c \
+    src/algorithm/execute_best_move.c \
+    src/libft/*.c \
+    src/ft_printf/*.c \
+    -o push_swap
+```
+
 Al tener fichero Makefile, solo hace falta compilar mediante el comando `make`. La configuración de la compilación con las banderas estándar y demás parámetros está en el propio fichero Makefile.
 
 ```bash
